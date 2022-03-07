@@ -1,4 +1,4 @@
-# MakeOhio2022 - Ohio State Universities 24 Hour make-a-thon.
+# MakeOhio2022 - Ohio State University's 24 Hour make-a-thon.
 Software that detects driver inattention and puts vehicle in autopilot if the driver is incapacitated and unable to drive. <br />
 
 **Honda Challenge**: Identify a condition(s) a driver may face and find a solution to increase user safety in vehicles. <br />
