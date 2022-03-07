@@ -14,9 +14,8 @@ Software that detects driver inattention and puts vehicle in autopilot if the dr
  </ul>
  
  
- **Distracted Driving Recognition**
+ **Distracted Driving Recognition** -  Used Python's Open CV library to develop facial regonition software that tracked and monitored eye movement
  <ul>
-  <li> Used Python's Open CV library to develop facial regonition software that tracked and monitored eye movement</li>
   <li> Developed a tier system to determine weightage of infraction on result
   <ul>
     <li>If first infraction of distracted driving, <b>Warning 1</b> is sent</li>
@@ -25,3 +24,14 @@ Software that detects driver inattention and puts vehicle in autopilot if the dr
     <li>If driver is asleep or unresponsive at the wheel, tier 3 <b>Autopilot</b> takes control</li>.
   </ul>
  </ul>
+ 
+ **Hardware** - Developed model car to test Autopilot on with Arduino
+ <ul>
+  <li>Warning 1: Send slow and quiet pings through arduino to small speaker to alert driver</li>
+  <li>Warning 2: Send fast and loud pings through arduino to small speaker to alert driver</li>
+ <li>Autopilot: Uses Arducam on arduino to find path to follow, corrects itself with refrence to that path with variable motor speeds, and then brings car to stop</li>
+ <ul><li>Also turns on LED hazard lights to let surroundings vehicles know of the drivers condition.</li></ul>
+ </ul>
+ 
+ **Color Detection for Autopilot** - Used Python's Open CV library to do color detection on Arducam's feed and determine whether to turn left, turn right, or go straight
+ FILL IN THE REST
