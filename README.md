@@ -8,7 +8,7 @@ Software that detects driver inattention and puts vehicle in autopilot if the dr
   <ul>
     <li>If driver is distracted (Ex. texting), program uses speaker system to send pings to alert driver to focus on the road</li>
     <li>If driver is asleep at wheel, from intoxication or a medical emergency, program puts vehicle into autopilot which re aligns the vechile with the proper path of the road,             and slowly brings the car to a stop</li>
-    <li>If multiple infractions of distracted driving, program automatically puts vechile into autopilot</li>
+    <li>If multiple infractions of distracted driving, program automatically puts vehicle into autopilot</li>
   </ul>
   <li>  <i>Process</i> : Built using Arduino and compatiable hardware</li>
  </ul>
@@ -34,4 +34,8 @@ Software that detects driver inattention and puts vehicle in autopilot if the dr
  </ul>
  
  **Color Detection for Autopilot** - Used Python's Open CV library to do color detection on Arducam's feed and determine whether to turn left, turn right, or go straight
- FILL IN THE REST
+ <ul>
+  <li>Finds simulated road (blue masking tape) on the screen by calculating where the highest concentration of the road color is</li>
+  <li>Determines vehicles distance from the center of the road and in what direction</li>
+  <li>Schedules instructions to vehicle using PyFirmata library</li>
+ </ul>
