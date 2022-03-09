@@ -7,19 +7,19 @@ import serial
 PORT = 'COM7'
 
 #link to serial/arduino
-# try:
-#     #board = Arduino("/dev/cu.usbmodem111301")
-#     ser = serial.Serial(
-#         port=f'\\\\.\\{PORT}',
-#         baudrate=9600,
-#         parity=serial.PARITY_ODD,
-#         stopbits=serial.STOPBITS_ONE,
-#         bytesize=serial.EIGHTBITS
-#     )
-#     print("Connected Successfully")
-# except:
-#     print('Disconnected')
-#     quit()
+try:
+    #board = Arduino("/dev/cu.usbmodem111301")
+    ser = serial.Serial(
+        port=f'\\\\.\\{PORT}',
+        baudrate=9600,
+        parity=serial.PARITY_ODD,
+        stopbits=serial.STOPBITS_ONE,
+        bytesize=serial.EIGHTBITS
+    )
+    print("Connected Successfully")
+except:
+    print('Disconnected')
+    quit()
 
 #opencv data sets
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -111,25 +111,27 @@ def handleWarnings(repeated_distractions, time_unresponsive):
 def firstWarning():
     print('first warning')
 
-    # if not ser.isOpen():
-    #     ser.open()
-    # ser.write(WARNING_1.encode())
+    #send WARNING_1 to serial monitor
+    if not ser.isOpen():
+        ser.open()
+    ser.write(WARNING_1.encode())
 
 def secondWarning():
     print('second warning')
 
-    # if not ser.isOpen():
-    #     ser.open()
-    # ser.write(WARNING_2.encode())
+    #send WARNING_2 to serial monitor
+    if not ser.isOpen():
+        ser.open()
+    ser.write(WARNING_2.encode())
 
 def lastWarning():
     print('AI taking controls')
     driving.run()
     
-
-    # if not ser.isOpen():
-    #     ser.open()
-    # ser.write(WARNING_3.encode())
+    #send WARNING_3 to serial monitor
+    if not ser.isOpen():
+        ser.open()
+    ser.write(WARNING_3.encode())
 
 #open camera
 cap = cv2.VideoCapture(0)
