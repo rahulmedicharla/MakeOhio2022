@@ -1,22 +1,19 @@
 import os
-PATH = 'assets'
 
-def deleteAllButMostRecentFiles():
-    os.chdir("c:/Users/rmedi/OneDrive/Documents/Make Ohio/python")
-    
-    if len(os.listdir(PATH)) < 3:
+def deleteAllButMostRecentFiles(filepath):    
+    if len(os.listdir(filepath)) < 3:
         return
 
     skip = True
-    for f in os.listdir(PATH):
+    for f in os.listdir(filepath):
         if skip:
             skip = False
             continue
-        os.remove(os.path.join(PATH, f))
+        os.remove(os.path.join(filepath, f))
 
-    for f in os.listdir(PATH):
+    for f in os.listdir(filepath):
         if f != 'img.jpg':
-            os.rename(os.path.join(PATH, f), os.path.join(PATH, 'img.jpg'))
+            os.rename(os.path.join(filepath, f), os.path.join(filepath, 'img.jpg'))
             break
 
 if __name__ == '__main__':
